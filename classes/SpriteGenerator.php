@@ -29,6 +29,9 @@ class SpriteGenerator {
         $objReader = new DirectoryReader($this->CONFIG_SPRITEGEN_SOURCEPATH);
         $arrImageData = $objReader->getFolderContent();
 
+        if(count($arrImageData) == 0)
+            die ("No sourceimages available!\n");
+
         //generate the sprite
         $objSpriteGenerator = new SpriteWriter($this->CONFIG_SPRITEGEN_OUTPATH, $this->CONFIG_SPRITE_NAME);
         $objSpriteGenerator->generateSprite($arrImageData);

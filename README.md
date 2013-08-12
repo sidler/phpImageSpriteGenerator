@@ -6,7 +6,7 @@ CSS / Image Sprite Generator written in PHP. First version to be used on the CLI
 (c) by Stefan Idler, MulchProductions, sidler@mulchprod.de, http://www.mulchprod.de
 
 Usage
-=====
+-----
 
 phpImageSpriteGenerator requires at least PHP 5.3 and the gd-lib module.
 Place all tiles (so all source images) in the "sourceimages"-folder and call the "generator.php"-script using the

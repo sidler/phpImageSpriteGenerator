@@ -16,6 +16,8 @@ class ImageData {
     private $intSpriteX = 0;
     private $intSpriteY = 0;
 
+    private $bitIsLowRes = false;
+
     function __construct($strAbsPath) {
         $this->strAbsPath = $strAbsPath;
 
@@ -97,6 +99,21 @@ class ImageData {
     public function getStrAbsPath() {
         return $this->strAbsPath;
     }
+
+    /**
+     * @param boolean $bitIsLowRes
+     */
+    public function setBitIsLowRes($bitIsLowRes) {
+        $this->bitIsLowRes = $bitIsLowRes;
+    }
+
+    /**
+     * @return boolean
+     */
+    public function getBitIsLowRes() {
+        return $this->bitIsLowRes;
+    }
+
 
 
 

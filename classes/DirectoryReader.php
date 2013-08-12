@@ -9,15 +9,8 @@
 
 class DirectoryReader {
 
-    private $strSourceDir = "";
     private $strSourceSuffix = ".png";
 
-    /**
-     * @param $strSourceDir
-     */
-    function __construct($strSourceDir) {
-        $this->strSourceDir = $strSourceDir;
-    }
 
     /**
      * @return ImageData[]
@@ -25,11 +18,12 @@ class DirectoryReader {
     public function getFolderContent() {
         $arrImageData = array();
 
-        foreach(scandir($this->strSourceDir) as $strOneImage) {
+        foreach(scandir(SpriteGenerator::$CONFIG_SPRITEGEN_SOURCEPATH) as $strOneImage) {
             if(substr($strOneImage, (strlen($this->strSourceSuffix) * -1)) == $this->strSourceSuffix)
                 $arrImageData[] = $this->image2ImageData($strOneImage);
         }
 
+        echo "found ".count($arrImageData)." images...\n";
         return $arrImageData;
     }
 
@@ -40,7 +34,7 @@ class DirectoryReader {
      * @return ImageData
      */
     private function image2ImageData($strOneImage) {
-        $objImageData = new ImageData($this->strSourceDir.DIRECTORY_SEPARATOR.$strOneImage);
+        $objImageData = new ImageData(SpriteGenerator::$CONFIG_SPRITEGEN_SOURCEPATH.DIRECTORY_SEPARATOR.$strOneImage);
         return $objImageData;
     }
 }

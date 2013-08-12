@@ -10,20 +10,6 @@
 interface IDataMapper {
 
     /**
-     * @param $strSpriteName
-     *
-     * @return mixed
-     */
-    public function setStrSpriteName($strSpriteName);
-
-    /**
-     * @param $strOutputDir
-     *
-     * @return mixed
-     */
-    public function setStrOutputDir($strOutputDir);
-
-    /**
      * @return mixed
      */
     public function writeHeader();

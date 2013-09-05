@@ -59,6 +59,21 @@ CSS;
 
 CSS;
 
+            if(SpriteGenerator::$CONFIG_GENERATE_PRINTSTYLES) {
+                $strSourceImageName = str_replace(".png", "_print.png", SpriteGenerator::$CONFIG_SPRITE_PREFIX.$objOneData->getImageName());
+
+                $this->strOutputBuffer .= <<<CSS
+
+@media print {
+    .{$strClassName}:after {
+        content:url('{$strSourceImageName}');
+    }
+}
+
+CSS;
+
+            }
+
         }
     }
 

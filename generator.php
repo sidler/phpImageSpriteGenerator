@@ -32,7 +32,12 @@ SpriteGenerator::$CONFIG_GENERATE_LOWRES        = true;
 
 //If you'll keep the css and the png files in separate directories, you may add a prefix
 //to the png file. This prefix is included in the generated css file, e.g. "../pics/".
-SpriteGenerator::$CONFIG_SPRITE_PREFIX          = "";
+SpriteGenerator::$CONFIG_SPRITE_PREFIX          = "../pics/";
+
+
+//If enabled, the script will generate styles for @media print classes.
+//In this case, the orignal image is appended by _print, e.g. edit.png will become edit_print.png.
+SpriteGenerator::$CONFIG_GENERATE_PRINTSTYLES   = true;
 
 // /CONFIG VARS ----------------------------------
 

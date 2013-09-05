@@ -21,6 +21,8 @@ class SpriteGenerator {
     public static $CONFIG_GENERATE_LOWRES = false;
     public static $CONFIG_SPRITE_PREFIX = "";
 
+    public static $CONFIG_GENERATE_PRINTSTYLES = false;
+
     public static $SPRITE_TOTAL_HEIGHT = 0;
     public static $SPRITE_TOTAL_WIDTH = 0;
 
